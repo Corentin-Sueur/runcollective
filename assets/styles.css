@@ -410,6 +410,13 @@ p { margin: 0 0 1em; }
 /* ---------- contact ---------- */
 
 .contact-inner { text-align: center; }
+/* Deliberately narrower than the content column: this is a closing beat, not a hero.
+   It does make the page a little longer overall — the point was to stop the About
+   section running tall against a shorter text column, not to cut total height. */
+.contact-photo {
+  width: min(100%, 34rem); aspect-ratio: 3 / 2; object-fit: cover;
+  margin: 0 auto 2.5rem;
+}
 .contact-lede { color: var(--fg-dim); max-width: 46ch; margin-inline: auto; font-size: 1.05rem; }
 .contact-cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
 
