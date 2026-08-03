@@ -71,6 +71,32 @@ some claims are reasonable inference rather than stated fact. Check these:
 - [ ] The `.ics` files recur weekly forever. If the club pauses (Christmas, summer), add
       `EXDATE;TZID=Europe/Stockholm:<YYYYMMDD>T181500` lines to the `VEVENT`.
 
+## Performance
+
+Images are sized to roughly 2× their displayed dimensions and re-encoded, which is where
+almost all the page weight is. If you replace one, resize it too — a full-resolution
+phone photo dropped into `assets/` will undo most of this.
+
+| file | serves at | displayed |
+|---|---|---|
+| `hero.jpg` | 1024×768 | full-bleed |
+| `crew-park.jpg` | 838×838 | ~419 px |
+| `crew-water.jpg` | 628×838 | ~314 px |
+| `social.jpg` | 1180×787 | ~half width |
+| `logo.png` | 192×192 | 56 px + favicon |
+
+**Still on the table:** converting to AVIF or WebP with a `<picture>` fallback saves a
+further ~180 KB, most of it on `hero.jpg` (~77 KB), which is the one image a resize
+can't help. macOS ImageIO refuses to encode either format inside the Claude sandbox, so
+this needs a real terminal — `cwebp`/`avifenc` via Homebrew, or Squoosh.
+
+Two audit findings are deliberately **not** fixed:
+
+- *Efficient cache lifetimes.* GitHub Pages hardcodes `max-age=600` and exposes no
+  setting. Only escapes are fronting it with a CDN or leaving Pages.
+- *Render-blocking CSS* (~130 ms). Inlining the stylesheet would need a build step to
+  keep the source split, which is not worth 130 ms.
+
 ## Photos
 
 The five images come from the club's existing WordPress site and are its own published

@@ -8,9 +8,15 @@
   --wrap: 1180px;
 }
 
+/* --accent is the brand orange, used for large display type where WCAG asks for 3:1.
+   --accent-strong is the same hue darkened for SMALL text, which needs 4.5:1. On the
+   dark ground the brand orange already clears it, so the two are identical there; on
+   the light ground it only reaches 3.2:1, so light mode darkens it. */
+
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
+  --accent-strong: #ff4a17;
   --bg: #0c0b0a;
   --bg-alt: #151210;
   --fg: #f5f2ee;
@@ -32,6 +38,7 @@
     --card: #fffefc;
     --shadow: 0 1px 2px rgba(20,17,14,.07);
     --logo-filter: none;
+    --accent-strong: #bd3711;
   }
 }
 
@@ -45,6 +52,7 @@
   --card: #fffefc;
   --shadow: 0 1px 2px rgba(20,17,14,.07);
   --logo-filter: none;
+  --accent-strong: #bd3711;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -246,7 +254,7 @@ p { margin: 0 0 1em; }
 }
 .run-kicker {
   text-transform: uppercase; letter-spacing: .18em; font-size: .72rem;
-  font-weight: 700; color: var(--accent); margin-bottom: .9rem;
+  font-weight: 700; color: var(--accent-strong); margin-bottom: .9rem;
 }
 .run-time {
   display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap;
@@ -276,7 +284,7 @@ p { margin: 0 0 1em; }
 .groups tbody th { font-size: 1.1rem; width: 3.5rem; }
 .groups tbody tr { transition: background-color .2s; }
 .groups tbody tr.is-match { background: color-mix(in srgb, var(--accent) 16%, transparent); }
-.groups tbody tr.is-match th { color: var(--accent); }
+.groups tbody tr.is-match th { color: var(--accent-strong); }
 .groups tbody tr.is-match td:last-child { font-weight: 700; }
 
 .btn-cal {
@@ -305,7 +313,7 @@ p { margin: 0 0 1em; }
 .picker-box input[type="range"] { width: 100%; accent-color: var(--accent); height: 1.75rem; cursor: pointer; }
 .picker-scale { display: flex; justify-content: space-between; font-size: .72rem; color: var(--fg-dim); letter-spacing: .1em; }
 .picker-verdict { margin: 1.5rem 0 0; font-size: 1.05rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
-.picker-verdict strong { color: var(--accent); }
+.picker-verdict strong { color: var(--accent-strong); }
 
 /* ---------- weather ---------- */
 
@@ -395,7 +403,7 @@ p { margin: 0 0 1em; }
 }
 .faq-list details[open] summary::after { content: "\2212"; }
 .faq-list details p { color: var(--fg-dim); max-width: 60ch; padding-bottom: 1.35rem; margin: 0; }
-.faq-list details p a { color: var(--accent); }
+.faq-list details p a { color: var(--accent-strong); }
 
 /* ---------- contact ---------- */
 

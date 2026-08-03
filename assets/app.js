@@ -338,10 +338,28 @@
   var weatherIcon = document.getElementById("weather-icon");
   var weatherLoadedFor = null;
 
+  /* The forecast is below the fold, so it waits until the page has finished loading
+     rather than competing with the critical path. Deliberately not an
+     IntersectionObserver: the section carries `hidden` until data arrives, a hidden
+     element generates no box, and the observer would never fire. */
+
+  function whenIdle(run) {
+    var start = function () {
+      if (window.requestIdleCallback) window.requestIdleCallback(run, { timeout: 2000 });
+      else setTimeout(run, 200);
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+  }
+
   function loadWeather(target) {
     var key = target.start.getTime();
     if (weatherLoadedFor === key) return;
     weatherLoadedFor = key;
+    whenIdle(function () { fetchWeather(target); });
+  }
+
+  function fetchWeather(target) {
 
     var p = zoneParts(target.start);
     var stamp = p.year + "-" + pad(p.month) + "-" + pad(p.day) + "T" + pad(p.hour) + ":00";
