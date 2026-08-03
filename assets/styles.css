@@ -410,12 +410,12 @@ p { margin: 0 0 1em; }
 /* ---------- contact ---------- */
 
 .contact-inner { text-align: center; }
-/* Deliberately narrower than the content column: this is a closing beat, not a hero.
-   It does make the page a little longer overall — the point was to stop the About
-   section running tall against a shorter text column, not to cut total height. */
+/* Letterbox rather than 3:2 so it can run the full width without the section getting
+   tall. The file is pre-cropped to 2.5:1 around the group; keep that ratio if you swap
+   it, since cropping this photo vertically starts cutting raised arms and feet. */
 .contact-photo {
-  width: min(100%, 34rem); aspect-ratio: 3 / 2; object-fit: cover;
-  margin: 0 auto 2.5rem;
+  width: 100%; aspect-ratio: 5 / 2; object-fit: cover;
+  margin: 0 auto 2.75rem;
 }
 .contact-lede { color: var(--fg-dim); max-width: 46ch; margin-inline: auto; font-size: 1.05rem; }
 .contact-cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
