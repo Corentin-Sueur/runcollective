@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run Collective Stockholm — free weekly runs, Tuesdays &amp; Saturdays</title>
+<meta name="description" content="Free, inclusive weekly runs through Stockholm. Tuesdays 18:15 in Gamla Stan, Saturdays 10:15 on Södermalm. Three pace groups, bag drop, fika and food afterwards. Just show up.">
+<meta name="theme-color" content="#0c0b0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<link rel="icon" href="./assets/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="./assets/logo.png">
+<link rel="canonical" href="https://corentin-sueur.github.io/runcollective/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://corentin-sueur.github.io/runcollective/">
+<meta property="og:title" content="Run Collective Stockholm">
+<meta property="og:description" content="Free, inclusive weekly runs through Stockholm. Tuesdays 18:15, Saturdays 10:15. Three pace groups, bag drop, fika afterwards.">
+<meta property="og:image" content="https://corentin-sueur.github.io/runcollective/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <a class="wordmark" href="#top">
+    <span class="wordmark-run">Run</span>
+    <span class="wordmark-col">Collective</span>
+    <span class="wordmark-sto">Stockholm</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#runs">Runs</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="theme-pill" role="group" aria-label="Colour theme">
+    <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+    <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <img class="hero-img" src="./assets/hero.jpg" alt="A group of runners heading along the Stockholm waterfront at sunset, with Stadshuset on the skyline." fetchpriority="high">
+  <div class="hero-inner">
+    <p class="eyebrow">Stockholm · since 2022</p>
+    <h1>Explore<br>Stockholm<br>by running</h1>
+    <p class="hero-lede">Free weekly runs through the city, three pace groups, and food, drinks and fika afterwards. No sign-up, no membership. Just turn up.</p>
+
+    <div class="nextrun" id="nextrun" hidden>
+      <p class="nextrun-label">Next run</p>
+      <p class="nextrun-when"><span id="nextrun-day"></span> <span id="nextrun-time"></span></p>
+      <p class="nextrun-where" id="nextrun-where"></p>
+      <p class="nextrun-count" id="nextrun-count"></p>
+    </div>
+
+    <p class="hero-cta">
+      <a class="btn btn-primary" href="#runs">See the runs</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/runcollectivestockholm" target="_blank" rel="noopener">Follow on Instagram</a>
+    </p>
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap two-col">
+    <div>
+      <h2>Meet the Run&nbsp;Collective Stockholm community</h2>
+      <p class="lead">Run Collective Stockholm is an inclusive community founded in 2022 where every runner feels welcomed and valued. Our mission is to explore Stockholm and the rest of the world together, promoting respect, connection, and the joy of running, culminating in friendly social gatherings after each session.</p>
+      <ul class="stat-row">
+        <li><strong>2</strong><span>runs a week</span></li>
+        <li><strong>3</strong><span>pace groups</span></li>
+        <li><strong>0 kr</strong><span>to join</span></li>
+      </ul>
+    </div>
+    <figure class="about-figs">
+      <img src="./assets/crew-water.jpg" alt="The Run Collective Stockholm group posing by the water on a sunny day." loading="lazy">
+      <img src="./assets/crew-park.jpg" alt="The Run Collective Stockholm group gathered under a large tree in a Stockholm park." loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="band runs band--tint" id="runs">
+  <div class="wrap">
+    <h2>Two runs a week</h2>
+    <p class="section-lede">Discover upcoming runs and social gatherings where every stride brings you closer to new friends and unforgettable moments in Stockholm.</p>
+
+    <div class="run-grid">
+
+      <article class="run-card" data-run="tuesday">
+        <p class="run-kicker">Run Collective Tuesday</p>
+        <p class="run-time"><span class="run-day">Tuesdays</span> <span class="run-clock">18:15</span></p>
+        <p class="run-blurb">Enjoy a scenic group run through Stockholm followed by food and drinks in the charming neighborhoods of Gamla Stan.</p>
+
+        <div class="venue">
+          <p class="venue-name">Bacchi Syre</p>
+          <p class="venue-area">Gamla Stan</p>
+          <a class="venue-map" href="https://maps.app.goo.gl/7KmhKY2cYHrnFZfq8" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+
+        <table class="groups">
+          <caption class="sr-only">Tuesday pace groups</caption>
+          <thead><tr><th scope="col">Group</th><th scope="col">Distance</th><th scope="col">Pace</th></tr></thead>
+          <tbody>
+            <tr data-group="1"><th scope="row">1</th><td>5–6 km</td><td>6:00 /km</td></tr>
+            <tr data-group="2"><th scope="row">2</th><td>8 km</td><td>5:30 /km</td></tr>
+            <tr data-group="3"><th scope="row">3</th><td>8–10 km</td><td>5:00 /km</td></tr>
+          </tbody>
+        </table>
+
+        <a class="btn btn-cal" href="./assets/run-collective-tuesday.ics" download>Add Tuesdays to calendar</a>
+      </article>
+
+      <article class="run-card" data-run="saturday">
+        <p class="run-kicker">Social Saturday Run</p>
+        <p class="run-time"><span class="run-day">Saturdays</span> <span class="run-clock">10:15</span></p>
+        <p class="run-blurb">Experience a relaxing long run followed by a cozy fika at our favorite bakery on Södermalm.</p>
+
+        <div class="venue">
+          <p class="venue-name">Biscuit Konditoriet</p>
+          <p class="venue-area">Södermalm</p>
+          <a class="venue-map" href="https://maps.app.goo.gl/Vvh4x5zvQrHoAwH78" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+
+        <table class="groups">
+          <caption class="sr-only">Saturday pace groups</caption>
+          <thead><tr><th scope="col">Group</th><th scope="col">Distance</th><th scope="col">Pace</th></tr></thead>
+          <tbody>
+            <tr data-group="1"><th scope="row">1</th><td>8–9 km</td><td>6:00 /km</td></tr>
+            <tr data-group="2"><th scope="row">2</th><td>12–15 km</td><td>5:30 /km</td></tr>
+            <tr data-group="3"><th scope="row">3</th><td>12–15 km</td><td>5:00 /km</td></tr>
+          </tbody>
+        </table>
+
+        <a class="btn btn-cal" href="./assets/social-saturday-run.ics" download>Add Saturdays to calendar</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="band picker" id="picker">
+  <div class="wrap">
+    <h2>Which group am I?</h2>
+    <p class="section-lede">Drag to the pace you can hold comfortably while still holding a conversation. That is the pace that matters here — not your race pace.</p>
+
+    <div class="picker-box">
+      <label class="picker-label" for="pace">Your comfortable pace</label>
+      <output class="picker-value" id="pace-out" for="pace">5:30 /km</output>
+      <input type="range" id="pace" name="pace" min="240" max="480" step="5" value="330"
+             aria-describedby="pace-verdict">
+      <div class="picker-scale" aria-hidden="true"><span>4:00</span><span>6:00</span><span>8:00</span></div>
+      <p class="picker-verdict" id="pace-verdict" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="band weather band--tint" id="weather" hidden>
+  <div class="wrap">
+    <h2>Forecast for the next run</h2>
+    <div class="weather-card">
+      <svg class="weather-icon" id="weather-icon" viewBox="0 0 96 96" role="img" aria-labelledby="weather-desc"></svg>
+      <div class="weather-body">
+        <p class="weather-when" id="weather-when"></p>
+        <p class="weather-temp" id="weather-temp"></p>
+        <p class="weather-desc" id="weather-desc"></p>
+        <p class="weather-meta" id="weather-meta"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band perks">
+  <div class="wrap">
+    <h2>Run together, explore Stockholm's surroundings</h2>
+    <p class="section-lede">Join us weekly to run through Stockholm's vibrant neighborhoods, ending each session with friendly social gatherings and refreshments.</p>
+    <ul class="perk-grid">
+      <li>
+        <h3>Bag drop available</h3>
+        <p>Join the run club for inclusive runs with bag drop that welcome all levels.</p>
+      </li>
+      <li>
+        <h3>Free to join</h3>
+        <p>Participate in our free weekly runs followed by social events featuring food and drinks.</p>
+      </li>
+      <li>
+        <h3>Community vibes</h3>
+        <p>Experience supportive group runs and connect with fellow runners in a respectful environment.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band social-strip">
+  <img src="./assets/social.jpg" alt="Runners sitting together at a long table with food and drinks after a run." loading="lazy">
+  <div class="social-strip-copy">
+    <h2>The run is half of it</h2>
+    <p>Every session ends the same way — everyone back together around a table. Food and drinks in Gamla Stan on Tuesdays, fika on Södermalm on Saturdays. Stay for as long as you like.</p>
+  </div>
+</section>
+
+<section class="band faq band--tint" id="faq">
+  <div class="wrap">
+    <h2>First time?</h2>
+    <p class="section-lede">Everything you were going to ask before showing up.</p>
+
+    <div class="faq-list">
+      <details>
+        <summary>Do I need to sign up?</summary>
+        <p>No. There is no registration and no membership. Turn up at the meeting point a few minutes before the start time and say hello — someone will point you to the right group.</p>
+      </details>
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. The runs are free to join. You only pay for whatever you order at the social afterwards, and you are welcome to skip that too.</p>
+      </details>
+      <details>
+        <summary>What do I do with my bag?</summary>
+        <p>There is a bag drop at both runs, so you can come straight from work or from home with a change of clothes.</p>
+      </details>
+      <details>
+        <summary>What if I'm slower than group 1?</summary>
+        <p>Come anyway. Group 1 is the social group — the point is that nobody is dropped. If you are not sure, start in group 1 and move up another week once you know the route and the people.</p>
+      </details>
+      <details>
+        <summary>How fast is "6-min pace" really?</summary>
+        <p>Six minutes per kilometre is a conversational jog for most regular runners — around 36 minutes for 6 km. If you can talk while you run, you are in the right group. Use the <a href="#picker">group picker</a> above if you would rather see it against your own pace.</p>
+      </details>
+      <details>
+        <summary>Do I need club kit?</summary>
+        <p>No. Wear whatever you run in. In winter, bring a headlamp or reflective layer for the darker stretches along the water.</p>
+      </details>
+      <details>
+        <summary>Where exactly do we meet?</summary>
+        <p>Tuesdays outside <a href="https://maps.app.goo.gl/7KmhKY2cYHrnFZfq8" target="_blank" rel="noopener">Bacchi Syre</a> in Gamla Stan, Saturdays outside <a href="https://maps.app.goo.gl/Vvh4x5zvQrHoAwH78" target="_blank" rel="noopener">Biscuit Konditoriet</a> on Södermalm. Both links open the exact pin in Maps.</p>
+      </details>
+      <details>
+        <summary>Can I bring a friend?</summary>
+        <p>Please do. Bring two.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap contact-inner">
+    <h2>Come run with us</h2>
+    <p class="contact-lede">The fastest way to reach us is a DM. We answer questions from first-timers every week — there is no such thing as a silly one.</p>
+    <p class="contact-cta">
+      <a class="btn btn-primary" href="https://www.instagram.com/runcollectivestockholm" target="_blank" rel="noopener">Message us on Instagram</a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/runcollectivestockholm/" target="_blank" rel="noopener">Facebook</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <img class="foot-logo" src="./assets/logo.png" alt="" width="72" height="72">
+    <div>
+      <p class="foot-name">Run Collective Stockholm</p>
+      <p class="foot-meta">Tuesdays 18:15 · Gamla Stan &nbsp;|&nbsp; Saturdays 10:15 · Södermalm</p>
+    </div>
+    <nav class="foot-links" aria-label="Social">
+      <a href="https://www.instagram.com/runcollectivestockholm" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/runcollectivestockholm/" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="./assets/app.js"></script>
+</body>
+</html>
