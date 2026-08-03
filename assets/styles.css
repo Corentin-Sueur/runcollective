@@ -237,9 +237,11 @@ p { margin: 0 0 1em; }
 }
 .stat-row span { text-transform: uppercase; font-size: .72rem; letter-spacing: .14em; color: var(--fg-dim); margin-top: .45rem; }
 
-.about-figs { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
-.about-figs img { aspect-ratio: 3 / 4; object-fit: cover; }
-.about-figs img:first-child { margin-top: 2rem; }
+/* The group shots are wide subjects — ~40 people in a horizontal band. Side-by-side
+   portrait tiles cropped the people at both edges, so they stack as landscape instead.
+   The files are pre-cropped to 3:2 around the group; keep that ratio if you swap them. */
+.about-figs { margin: 0; display: grid; gap: .75rem; }
+.about-figs img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 
 /* ---------- run cards ---------- */
 
