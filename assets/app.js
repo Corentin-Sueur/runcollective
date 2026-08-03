@@ -12,33 +12,41 @@
 
   var root = document.documentElement;
 
-  function markButtons(name) {
-    var buttons = document.querySelectorAll("[data-theme-set]");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].setAttribute("aria-pressed", String(buttons[i].dataset.themeSet === name));
+  var themeToggle = document.getElementById("theme-toggle");
+
+  function systemTheme() {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light" : "dark";
+  }
+
+  function currentTheme() {
+    return root.getAttribute("data-theme") || systemTheme();
+  }
+
+  function labelToggle(name) {
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-label",
+        name === "dark" ? "Switch to light theme" : "Switch to dark theme");
     }
   }
 
   function applyTheme(name) {
     root.setAttribute("data-theme", name);
-    markButtons(name);
+    labelToggle(name);
     try { localStorage.setItem("rcs-theme", name); } catch (e) { /* private mode */ }
   }
 
   var stored = null;
   try { stored = localStorage.getItem("rcs-theme"); } catch (e) { /* private mode */ }
 
-  if (stored === "light" || stored === "dark") {
-    applyTheme(stored);
-  } else {
-    var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-    markButtons(prefersLight ? "light" : "dark");
-  }
+  if (stored === "light" || stored === "dark") applyTheme(stored);
+  else labelToggle(systemTheme());
 
-  document.addEventListener("click", function (event) {
-    var button = event.target.closest("[data-theme-set]");
-    if (button) applyTheme(button.dataset.themeSet);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      applyTheme(currentTheme() === "dark" ? "light" : "dark");
+    });
+  }
 
   /* ---------- Stockholm wall clock <-> absolute instant ---------- */
 

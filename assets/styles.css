@@ -138,19 +138,35 @@ p { margin: 0 0 1em; }
 }
 .site-nav a:hover { border-bottom-color: var(--accent); }
 
-.theme-pill { display: flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
-.theme-pill button {
-  font: inherit; font-size: .68rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: .4rem .8rem; border: 0; cursor: pointer;
-  background: transparent; color: var(--fg-dim);
+.theme-toggle {
+  display: grid; place-items: center;
+  width: 2.5rem; height: 2.5rem; padding: 0;
+  border: 1px solid var(--rule); border-radius: 999px;
+  background: transparent; color: var(--fg-dim); cursor: pointer;
+  transition: color .15s, border-color .15s;
 }
-.theme-pill button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle svg { width: 1.15rem; height: 1.15rem; grid-area: 1 / 1; }
+.icon-sun circle { fill: currentColor; }
+.icon-sun line { stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.icon-moon path { fill: currentColor; }
+
+/* Show the icon of the theme the button switches TO. The default (no data-theme) is
+   dark, so the sun shows; prefers-color-scheme flips that only while unset. */
+.icon-moon { display: none; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .icon-sun { display: none; }
+  :root:not([data-theme]) .icon-moon { display: block; }
+}
+:root[data-theme="light"] .icon-sun { display: none; }
+:root[data-theme="light"] .icon-moon { display: block; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
 
 @media (max-width: 860px) {
   .site-nav { gap: 1rem; order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
   .site-head { flex-wrap: wrap; row-gap: .6rem; }
-  .theme-pill { margin-left: auto; }
+  .theme-toggle { margin-left: auto; }
 }
 
 /* ---------- hero ---------- */
@@ -392,7 +408,7 @@ p { margin: 0 0 1em; }
 
 /* ---------- faq ---------- */
 
-.faq-list { margin-top: 2.5rem; max-width: 52rem; border-top: 1px solid var(--rule); }
+.faq-list { margin-top: 2.5rem; max-width: 46rem; border-top: 1px solid var(--rule); }
 .faq-list details { border-bottom: 1px solid var(--rule); }
 .faq-list summary {
   cursor: pointer; list-style: none; padding: 1.35rem 2.5rem 1.35rem 0; position: relative;
@@ -404,7 +420,17 @@ p { margin: 0 0 1em; }
   font-size: 1.6rem; font-weight: 400; color: var(--accent); line-height: 1;
 }
 .faq-list details[open] summary::after { content: "\2212"; }
-.faq-list details p { color: var(--fg-dim); max-width: 60ch; padding-bottom: 1.35rem; margin: 0; }
+/* The answer shares the question's measure: same right inset as the summary, which
+   reserves room for the +/- marker. A 60ch cap here made answers stop short of the
+   question above them. Justified text needs hyphenation or it opens rivers. */
+.faq-list details p {
+  color: var(--fg-dim);
+  margin: 0;
+  padding: 0 2.5rem 1.35rem 0;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
 .faq-list details p a { color: var(--accent-strong); }
 
 /* ---------- contact ---------- */

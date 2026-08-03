@@ -34,10 +34,20 @@
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="theme-pill" role="group" aria-label="Colour theme">
-    <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
-    <button type="button" data-theme-set="dark" aria-pressed="true">Dark</button>
-  </div>
+  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to light theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.6"/>
+      <g>
+        <line x1="12" y1="1.4" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.6"/>
+        <line x1="1.4" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.6" y2="12"/>
+        <line x1="4.5" y1="4.5" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.5" y2="19.5"/>
+        <line x1="19.5" y1="4.5" x2="17.7" y2="6.3"/><line x1="6.3" y1="17.7" x2="4.5" y2="19.5"/>
+      </g>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 13.2A8.6 8.6 0 1 1 10.8 3a6.9 6.9 0 0 0 10.2 10.2z"/>
+    </svg>
+  </button>
 </header>
 
 <main id="main">
