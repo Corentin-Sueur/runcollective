@@ -109,10 +109,12 @@ one from a Tuesday.
 GitHub Pages, `main` branch, root. Every path in the site is relative, so it works
 unchanged whether it is served from a subpath (`/runcollective/`) or from the apex
 domain — with three deliberate exceptions in `<head>`, which must be absolute because
-they are read off-site: `og:image`, `og:url` and `rel="canonical"`. They currently point
-at `corentin-sueur.github.io/runcollective/` and must be updated on a domain cutover, or
-link previews break and Google indexes the wrong URL.
+they are read off-site: `og:image`, `og:url` and `rel="canonical"`. They point at
+`runcollective.corentinsueur.com/` (custom domain since 2026-09-24, `CNAME` file in
+this repo + a DNS `CNAME` record at Spaceship) and must be updated on any future
+domain cutover, or link previews break and Google indexes the wrong URL. The old
+`corentin-sueur.github.io/runcollective/` URLs 301-redirect.
 
-To move it to `runcollective.se` later: add a `CNAME` file containing `runcollective.se`,
-then point the domain's DNS at GitHub Pages (four `A` records for the apex, or a `CNAME`
-for `www`). Nothing in the site needs to change.
+To move it to `runcollective.se` later: replace the `CNAME` file contents, point the
+new domain's DNS at GitHub Pages (four `A` records for the apex, or a `CNAME` for
+`www`), and update the three absolute URLs above.
